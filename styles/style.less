@@ -1,0 +1,66 @@
+@textColor: #ba2f16;
+@h2Color: #8b008b;
+@textColorItalic: gray;
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.flexStyle(@background) {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background: @background;
+}
+
+header {
+  .flexStyle(#e3fbe3);
+  h1 {
+    font-size: 40px;
+    color: @textColor;
+  }
+}
+
+section {
+  h2 {
+    color: @h2Color;
+    font-size: 35px;
+    padding: 20px;
+    text-align: center;
+  }
+  .about {
+    .flexStyle(antiquewhite);
+    .intro {
+      font-size: 20px;
+      padding: 20px;
+      font-style: italic;
+    }
+    .list {
+      padding: 30px;
+      line-height: 25px;
+    }
+  }
+  .information {
+    .flexStyle(#e0ffff);
+    p {
+      font-size: 18px;
+      padding: 20px 50px;
+      line-height: 25px;
+    }
+  }
+  .contact:extend(header) {
+    p {
+      line-height: 30px;
+      font-size: 20px;
+    }
+  }
+  .reference {
+    font-style: italic;
+    color: @textColorItalic;
+  }
+}
